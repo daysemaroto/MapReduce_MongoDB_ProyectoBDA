@@ -16,12 +16,14 @@ db=client[dbName]
 
 #lectura de datos a la base de datos
 #almacenamos los datos en una variabla para luego proceder a imprimirlo por consola.
+#se obtiene los datos cuyo campo "name" es igual a "Esta es una prueba"
 result= db[collectionName].find({"name": "Esta es una prueba"})
 
 print("******************Primera consulta************")
 for i in result:
     print(i)
 
+#se obtiene los datos cuyo campo "valence" es mayor a 0.99
 result2= db[collectionName].find({"valence": { "$gt": 0.99 }})
 print("")
 print("******************Segunda consulta************")
